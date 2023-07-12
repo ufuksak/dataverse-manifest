@@ -27,6 +27,17 @@ inputPorts:
       advanceOptions:
         delimiter: ','
         header: true
+  - alias: Test_input_port4
+    description: string2
+    type: s3-parquet
+    tags: []
+    syncType: pull
+    connectionUrn: urn:dv:connection:308c470d-0c06-4fe4-beaf-eec65f92851a
+    dataSet:
+      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
+      advanceOptions:
+        delimiter: ','
+        header: true
   - alias: Test_input_port
     description: string
     type: postgres-table
