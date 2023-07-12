@@ -34,10 +34,7 @@ inputPorts:
     syncType: pull
     connectionUrn: urn:dv:connection:308c470d-0c06-4fe4-beaf-eec65f92851a
     dataSet:
-      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
-      advanceOptions:
-        delimiter: ','
-        header: true
+      path: s3://dp-input-bucket/Parquet_Files/mpay-tx.parquet
   - alias: Test_input_port
     description: string
     type: postgres-table
