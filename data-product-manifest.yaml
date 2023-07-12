@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_port123452
+alias: Test0001_input_port1234521
 discoveryPort:
-  name: Test all dq checks warnings 12012
+  name: Test all dq checks warnings 120121
   shortDescription: TestMest 345
   longDescription: TestMest Weather Forecast 34435
   tags:
@@ -102,90 +102,3 @@ outputPort:
       connectionUrn: urn:dv:connection:d277aa22-c3d0-40bc-8816-79f2daabc0f8
       dataSet:
         path: s3://dataverse-byte/sample-data/inputData/sample3.parquet
-controlPort:
-  dataQualityRules:
-    RecordCountCheck:
-      inputPort:
-        - referenceAlias: Test_input_port290
-          expression: ">="
-          number: 100
-      productState:
-        referenceAlias: Test0001_input_port123452
-        expression: ==
-        number: 100
-    NullValueCheck:
-      inputPort:
-        - referenceAlias: Test_input_port290
-          checks:
-            - column: amount
-              expression: ">="
-              number: 9
-            - column: payment_option
-              expression: ">="
-              number: 8
-      productState:
-        referenceAlias: Test0001_input_port123452
-        checks:
-          - column: amount
-            expression: ">="
-            number: 0.9
-    NullCombinationCheck:
-      productState:
-        referenceAlias: Test0001_input_port123452
-        checks:
-          - columns:
-              - transaction_reference
-              - order_reference
-            expression: ">="
-            number: 0.99
-    UnacceptableTextValueCheck:
-      inputPort:
-        - referenceAlias: Test_input_port290
-          checks:
-            - column: payment_option
-              valueList:
-                - VISA
-                - MASTERCARD
-              number: 0.95
-              expression: ">="
-      productState:
-        referenceAlias: Test0001_input_port123452
-        checks:
-          - column: payment_option
-            valueList:
-              - MASTERCARD
-              - VISA
-            number: 0.9
-            expression: ">="
-    UniquenessCheck:
-      inputPort:
-        - referenceAlias: Test_input_port290
-          checks:
-            - column: store_group_name
-            - column: store_name
-    UniqueCombinationCheck:
-      inputPort:
-        - referenceAlias: Test_input_port290
-          checks:
-            - columns:
-                - store_name
-                - transaction_Reference
-      productState:
-        referenceAlias: Test0001_input_port123452
-        checks:
-          - columns:
-              - store_name
-              - transaction_Reference
-    DistinctValueCountCheck:
-      inputPort:
-        - referenceAlias: Test_input_port290
-          checks:
-            - column: payment_option
-              number: 2
-              expression: "<="
-      productState:
-        referenceAlias: Test0001_input_port123452
-        checks:
-          - column: payment_option
-            number: 2
-            expression: "<="
