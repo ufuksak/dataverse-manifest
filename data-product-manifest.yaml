@@ -30,7 +30,7 @@ inputPorts:
 productState:
   alias: Test0001_input_port
   updateType: 'scheduled'
-  updateSchedule: "*/10 * * * *"
+  updateSchedule: "*/15 * * * *"
   updateStrategy: append
   logicalSchema:
     properties:
