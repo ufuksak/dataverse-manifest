@@ -3,7 +3,7 @@ version: 0.1.0
 alias: Test0001_input_port12345210101
 discoveryPort:
   name: Test all dq checks warnings 1201210101
-  shortDescription: TestMest 345
+  shortDescription: TestMest 345 535
   longDescription: TestMest Weather Forecast 34435
   tags:
     - MAF Data
@@ -30,7 +30,7 @@ inputPorts:
 productState:
   alias: Test0001_input_port
   updateType: 'scheduled'
-  updateSchedule: "*/10 * * * *"
+  updateSchedule: "*/15 * * * *"
   updateStrategy: append
   logicalSchema:
     properties:
