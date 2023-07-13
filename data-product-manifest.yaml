@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_port1234521
+alias: Test0001_input_port12345215
 discoveryPort:
-  name: Test all dq checks warnings 120121
+  name: Test all dq checks warnings 1201215
   shortDescription: TestMest 345
   longDescription: TestMest Weather Forecast 34435
   tags:
