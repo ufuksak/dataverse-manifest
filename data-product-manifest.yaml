@@ -21,31 +21,9 @@ inputPorts:
     type: s3-csv
     tags: []
     syncType: pull
-    connectionUrn: urn:dv:connection:308c470d-0c06-4fe4-beaf-eec65f92851a
+    connectionUrn: urn:dv:connection:718b76ab-2027-4159-9dd8-a619386ad69f
     dataSet:
       path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
-      advanceOptions:
-        delimiter: ','
-        header: true
-  - alias: Test_input_port
-    description: string
-    type: postgres-table
-    syncType: pull
-    connectionUrn: urn:dv:connection:975e48c9-f7bf-4ee0-b5a5-a53f3e2e7b45
-    dataSet:
-      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
-      tableName: details
-      advanceOptions:
-        delimiter: ','
-        header: true
-  - alias: Test_input_port2
-    description: string
-    type: vertica-table
-    syncType: pull
-    connectionUrn: urn:dv:connection:0b18c8d2-a6d1-4212-a3d4-33cfd776d905
-    dataSet:
-      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
-      tableName: details
       advanceOptions:
         delimiter: ','
         header: true
