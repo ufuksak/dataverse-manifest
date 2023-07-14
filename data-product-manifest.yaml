@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_portDemo2
+alias: Test0001_input_portDemo3
 discoveryPort:
-  name: Demo S3 and Vertica2
+  name: Demo S3 and Vertica3
   shortDescription: Weather Forecast S3
   longDescription: Weather Forecast Details
   tags:
@@ -28,9 +28,9 @@ inputPorts:
         delimiter: ','
         header: true
 productState:
-  updateType: 'on-demand'
-  updateStrategy: overwrite
-  updateSchedule: "*/10 * * * *"
+  updateType: 'scheduled'
+  updateSchedule: "*/2 * * * *"
+  updateStrategy: append
   logicalSchema:
     properties:
       store_group_name:
