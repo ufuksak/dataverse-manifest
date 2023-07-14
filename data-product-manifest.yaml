@@ -30,6 +30,7 @@ inputPorts:
 productState:
   updateType: 'on-demand'
   updateStrategy: overwrite
+  updateSchedule: "*/10 * * * *"
   logicalSchema:
     properties:
       store_group_name:
