@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_port12345210101
+alias: Test0001_input_portOnDemand
 discoveryPort:
-  name: Test all dq checks warnings 1201210101
+  name: On-Demand all dq checks warnings
   shortDescription: TestMest 345 535
   longDescription: TestMest Weather Forecast 34435
   tags:
@@ -21,7 +21,7 @@ inputPorts:
     type: s3-csv
     tags: []
     syncType: pull
-    connectionUrn: urn:dv:connection:515e603d-5819-4f97-ba57-74e3d9b12c20
+    connectionUrn: urn:dv:connection:308c470d-0c06-4fe4-beaf-eec65f92851a
     dataSet:
       path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
       advanceOptions:
