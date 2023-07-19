@@ -21,7 +21,7 @@ inputPorts:
     type: s3-csv
     tags: []
     syncType: pull
-    connectionUrn: urn:dv:connection:308c470d-0c06-4fe4-beaf-eec65f92851a
+    connectionUrn: urn:dv:connection:135c5c10-3a54-40a8-afdc-55ddd31ee869
     dataSet:
       path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
       advanceOptions:
@@ -59,7 +59,7 @@ outputPort:
   updateChannels:
     - type: vertica-table
       syncType: push
-      connectionUrn: urn:dv:connection:f4cba947-fcef-47f1-b48c-aac532522d90
+      connectionUrn: urn:dv:connection:135c5c10-3a54-40a8-afdc-55ddd31ee869
       dataSet:
         tableName: demo_data_table
     - type: s3-csv
