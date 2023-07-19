@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_portDemo3
+alias: Test0001_input_portDemo4
 discoveryPort:
-  name: Demo S3 and Vertica3
+  name: Demo S3 and Vertica4
   shortDescription: Weather Forecast S3
   longDescription: Weather Forecast Details
   tags:
@@ -52,6 +52,8 @@ transformation:
     query: SELECT store_group_name,store_name,transaction_reference,created_date,amount FROM Test_input_port290 where amount > 200
 outputPort:
   subscriptionChannels:
+    - channelType: rest-api
+      queryType: sql
     - channelType: jdbc
       queryType: sql
   updateChannels:
