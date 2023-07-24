@@ -64,6 +64,6 @@ outputPort:
         tableName: demo_data_table
     - type: s3-csv
       syncType: push
-      connectionUrn: urn:dv:connection:d277aa22-c3d0-40bc-8816-79f2daabc0f8
+      connectionUrn: urn:dv:connection:47003a0b-f2ca-4891-8984-c7b86ac14793
       dataSet:
         path: s3://dp-input-bucket/demo_data_table
