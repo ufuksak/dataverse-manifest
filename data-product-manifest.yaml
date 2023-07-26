@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_portOnDemand91
+alias: Test0001_input_portOnDemand912
 discoveryPort:
-  name: On-Demand all dq checks warnings91
+  name: On-Demand all dq checks warnings912
   shortDescription: TestMest 345 535
   longDescription: TestMest Weather Forecast 34435
   tags:
