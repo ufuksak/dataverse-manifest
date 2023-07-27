@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_portDemo14
+alias: Test0001_input_portDemo15
 discoveryPort:
-  name: Demo S3 and Vertica14
+  name: Demo S3 and Vertica15
   shortDescription: Weather Forecast S3
   longDescription: Weather Forecast Details
   tags:
