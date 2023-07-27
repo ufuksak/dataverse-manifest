@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: Test0001_input_port4
+alias: Test0001_input_port5
 discoveryPort:
-  name: Test all dq checks warnings4
+  name: Test all dq checks warnings5
   shortDescription: TestMest 345 535
   longDescription: TestMest Weather Forecast 34435
   tags:
@@ -28,9 +28,9 @@ inputPorts:
         delimiter: ','
         header: true
 productState:
-  alias: Test0001_input_port
-  updateType: 'on-demand'
-  updateStrategy: overwrite
+  updateType: 'scheduled'
+  updateSchedule: "*/2 * * * *"
+  updateStrategy: append
   logicalSchema:
     properties:
       store_group_name:
