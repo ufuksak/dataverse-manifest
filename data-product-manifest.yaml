@@ -57,11 +57,6 @@ outputPort:
     - channelType: jdbc
       queryType: sql
   updateChannels:
-    - type: vertica-table
-      syncType: push
-      connectionUrn: urn:dv:connection:47003a0b-f2ca-4891-8984-c7b86ac14793
-      dataSet:
-        tableName: demo_data_table
     - type: s3-csv
       syncType: push
       connectionUrn: urn:dv:connection:135c5c10-3a54-40a8-afdc-55ddd31ee869
