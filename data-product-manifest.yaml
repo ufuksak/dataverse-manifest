@@ -1,78 +1,64 @@
 ---
 version: 0.1.0
-alias: id_graph_customer1
+alias: Test0001_input_portDemo17
 discoveryPort:
-  name: Id Graph Customers1
-  description: Flattened data for id graph cluster
-  domain:
-    - customer
-
+  name: Demo S3 and Vertica17
+  shortDescription: Weather Forecast S3
+  longDescription: Weather Forecast Details
+  tags:
+    - MAF Data
+    - Schedule Run
+  domain: ['Finance']
+  function: ['Forecast']
+  regulatoryFields:
+    dataPrivacy: public
+    customerInfo: nonPII
+    dataOrigin: machineGenerated
+    monetaryInfo: nonFinancialData
 inputPorts:
-  - alias: customer_data
-    description: string
-    tags: []
-    extra: {}
-    syncType: pull
+  - alias: Test_input_port290
+    description: string2
     type: s3-csv
-    connectionUrn: urn:dv:connection:d7120a9c-e7f0-47f0-9c13-bc225a81f60c
-    filter: ''
-    projection:
-      - '*'
+    tags: []
+    syncType: pull
+    connectionUrn: urn:dv:connection:135c5c10-3a54-40a8-afdc-55ddd31ee869
     dataSet:
-      path: 's3://xsight-id-graph-preprod/ds/idg/experiment_1/persistent_id/part-00000-153f51da-d517-447c-9055-5056bc061860-c000.csv'
-      delimiter: ','
-      header: true
-
+      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
+      advanceOptions:
+        delimiter: ','
+        header: true
 productState:
-  updateType: on-demand
+  alias: Test0001_input_port
+  updateType: 'on-demand'
   updateStrategy: overwrite
   logicalSchema:
     properties:
-      unique_id:
+      store_group_name:
         type: string
-      salted_customerName:
+      store_name:
         type: string
-      customerName:
+      transaction_reference:
         type: string
-      phone_isd_code:
+      created_date:
+        type: datetime
+      amount:
         type: string
-      phone:
-        type: string
-      email:
-        type: string
-      dateOfBirth:
-        type: string
-      source:
-        type: string
-      first_name:
-        type: string
-      middle_name:
-        type: string
-      last_name:
-        type: string
-      gender:
-        type: string
-      nationality:
-        type: string
-      __splink_salt:
-        type: string
-      merged_gcr_id:
-        type: string
-      cluster_id:
-        type: string
-      cluster_id_ts:
-        type: string
-
 transformation:
-  - alias: customer_data_all
-    sequenceNo: 1
+  - alias: Test_input_port_trans1
+    description: step_1
     type: sql
-    description: Get everything from customer data
-    query: select * from customer_data
-
+    sequenceNo: 1
+    stepName: one
+    query: SELECT store_group_name,store_name,transaction_reference,created_date,amount FROM Test_input_port290 where amount > 200
 outputPort:
   subscriptionChannels:
-    - channelType: jdbc
-      queryType: sql
     - channelType: rest-api
       queryType: sql
+    - channelType: jdbc
+      queryType: sql
+  updateChannels:
+    - type: s3-csv
+      syncType: push
+      connectionUrn: urn:dv:connection:135c5c10-3a54-40a8-afdc-55ddd31ee869
+      dataSet:
+        path: s3://dp-input-bucket/demo_data_table
