@@ -21,7 +21,7 @@ inputPorts:
     type: s3-csv
     tags: []
     syncType: pull
-    connectionUrn: urn:dv:connection:b6559db9-195b-4ce0-bd96-ba92aa6a8bf1
+    connectionUrn: urn:dv:connection:5aa08a0a-e4ad-40c9-aaa5-96ba10f56827
     dataSet:
       path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
       advanceOptions:
