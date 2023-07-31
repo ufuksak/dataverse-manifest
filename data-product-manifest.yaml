@@ -1,12 +1,11 @@
 ---
 version: 0.1.0
-alias: id_graph_customer1
+alias: id_graph_customer_dp_sample_ufo
 discoveryPort:
-  name: Id Graph Customers1
+  name: Id Graph Customers Sample ufo
   description: Flattened data for id graph cluster
   domain:
     - customer
-
 inputPorts:
   - alias: customer_data
     description: string
@@ -22,7 +21,6 @@ inputPorts:
       path: 's3://xsight-id-graph-preprod/ds/idg/experiment_1/persistent_id/part-00000-153f51da-d517-447c-9055-5056bc061860-c000.csv'
       delimiter: ','
       header: true
-
 productState:
   updateType: on-demand
   updateStrategy: overwrite
@@ -62,14 +60,12 @@ productState:
         type: string
       cluster_id_ts:
         type: string
-
 transformation:
   - alias: customer_data_all
     sequenceNo: 1
     type: sql
     description: Get everything from customer data
     query: select * from customer_data
-
 outputPort:
   subscriptionChannels:
     - channelType: jdbc
