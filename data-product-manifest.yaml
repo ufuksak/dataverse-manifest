@@ -70,7 +70,7 @@ transformation:
     type: sql
     sequenceNo: 1
     stepName: one
-    query: SELECT * FROM Test_input_port
+    query: SELECT * FROM Test_input_port where amount > 400
     inputDataFrameList:
       - inputDataFrame: test
         tempViewName: test
