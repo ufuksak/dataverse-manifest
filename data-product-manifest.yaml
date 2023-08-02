@@ -2,7 +2,7 @@
 version: 0.1.0
 alias: Test0001_input_port_unique
 discoveryPort:
-  name: Test all dq checks warnings 120123
+  name: Test all dq checks warnings unique
   shortDescription: TestMest 345
   longDescription: Test Ecommerce
   tags:
