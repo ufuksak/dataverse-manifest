@@ -1,8 +1,8 @@
 ---
 version: 0.1.0
-alias: id_graph_customer_dp_sample_ufo4
+alias: id_graph_customer_dp_sample_ufo5
 discoveryPort:
-  name: Id Graph Customers Sample ufo4
+  name: Id Graph Customers Sample ufo5
   description: Flattened data for id graph cluster
   domain:
     - customer
