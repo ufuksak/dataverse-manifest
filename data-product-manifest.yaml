@@ -1,10 +1,10 @@
 ---
 version: 0.1.0
-alias: Test0001_input_port12345215125
+alias: Test0001_input_portOnDemand_ufuk
 discoveryPort:
-  name: Test all dq checks warnings 1201215146
-  shortDescription: TestMest 345
-  longDescription: TestMest Weather Forecast 34435
+  name: DP - Test Lineage ufuk
+  shortDescription: Test Data Product - run on demand
+  longDescription: This test data product has been created to test lineage functionality
   tags:
     - MAF Data
     - Schedule Run
@@ -18,65 +18,33 @@ discoveryPort:
 inputPorts:
   - alias: Test_input_port290
     description: string2
-    type: s3-csv
+    type: dataproduct
     tags: []
     syncType: pull
-    connectionUrn: urn:dv:connection:308c470d-0c06-4fe4-beaf-eec65f92851a
-    dataSet:
-      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
-      advanceOptions:
-        delimiter: ','
-        header: true
-  - alias: Test_input_port
-    description: string
-    type: postgres-table
-    syncType: pull
-    connectionUrn: urn:dv:connection:975e48c9-f7bf-4ee0-b5a5-a53f3e2e7b45
-    dataSet:
-      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
-      tableName: details
-      advanceOptions:
-        delimiter: ','
-        header: true
-  - alias: Test_input_port2
-    description: string
-    type: vertica-table
-    syncType: pull
-    connectionUrn: urn:dv:connection:0b18c8d2-a6d1-4212-a3d4-33cfd776d905
-    dataSet:
-      path: s3://dp-input-bucket/mpay-tx/mpay-tx.csv
-      tableName: details
-      advanceOptions:
-        delimiter: ','
-        header: true
+    dataProductUrn: urn:dv:dataproduct:fabb47a2-3da9-4286-a98f-f7670e6e3ac9
 productState:
   alias: Test0001_input_port
-  updateType: 'scheduled'
-  updateSchedule: "*/10 * * * *"
-  updateStrategy: append
+  updateType: 'on-demand'
+  updateStrategy: overwrite
   logicalSchema:
     properties:
-      id:
-        type: number
-      name:
-        type: String
-      marks:
-        type: number
-      modified:
+      store_group_name:
+        type: string
+      store_name:
+        type: string
+      transaction_reference:
+        type: string
+      created_date:
         type: datetime
+      amount:
+        type: string
 transformation:
   - alias: Test_input_port_trans1
     description: step_1
     type: sql
     sequenceNo: 1
     stepName: one
-    query: SELECT * FROM Test_input_port
-    inputDataFrameList:
-      - inputDataFrame: test
-        tempViewName: test
-    references:
-      - alias: Test_input_port
-        sqlReference: Test_input_port        
+    query: SELECT store_group_name,store_name,transaction_reference,created_date,amount FROM Test_input_port290 where amount > 200     
 outputPort:
   subscriptionChannels:
     - channelType: jdbc
