@@ -3,7 +3,7 @@ version: 0.1.0
 alias: Test0001_input_port10
 discoveryPort:
   name: Test all dq checks warnings10
-  shortDescription: TestMest 345 535
+  shortDescription: TestMest 345 53512
   longDescription: TestMest Weather Forecast 34435
   tags:
     - MAF Data
